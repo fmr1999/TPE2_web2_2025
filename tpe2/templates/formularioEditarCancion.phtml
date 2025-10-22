@@ -1,0 +1,50 @@
+
+<form action="<?= BASE_URL ?>editar/<?= $cancion->id?>" method="POST"
+      class="d-flex flex-wrap align-items-center justify-content-center gap-3 p-3"
+      style="background-color: transparent;">
+
+  <div class="d-flex flex-column text-center " >
+    <label  class="form-label mb-1" >Álbum</label>
+    <select name="id_album" 
+            class="form-select rounded-pill bg-transparent   border-dark"
+            style="min-width: 160px;">
+      <?php foreach ($albumes as $album): ?>
+        <option value="<?= $album->id ?>"><?= $album->nombre ?></option>
+      <?php endforeach ?>
+    </select>
+  </div>
+
+ 
+  <div class="d-flex flex-column text-center ">
+    <label class="form-label mb-1 ">Canción</label>
+    <input type="text"  name="cancion" required
+           class="form-control rounded-pill bg-transparent  border-dark"
+           placeholder="Nombre">
+  </div>
+
+  
+  <div class="d-flex flex-column text-center">
+    <label class="form-label mb-1 ">Duración</label>
+    <input type="number" name="duracion" required
+           class="form-control rounded-pill bg-transparent  border-dark"
+           placeholder="Segundos">
+  </div>
+
+    <div class="d-flex flex-column text-center">
+        <label class="form-label mb-1 ">Letra explícita</label>
+        <select  name="letra" required
+                class="form-select rounded-pill bg-transparent   border-dark">
+            <option value="1" <?= ($cancion->letra_explicita) ? 'selected' : '' ?>>Si</option>
+            <option value="0" <?= (!$cancion->letra_explicita) ? 'selected' : '' ?>>No</option>
+        </select>
+    </div>
+    
+    <div class="d-flex flex-column align-items-center text-center">
+        <button type="submit" class="btn btn-secondary rounded-pill px-4 mt-4">Editar</button>
+    </div>
+    
+</form>
+
+
+ 
+

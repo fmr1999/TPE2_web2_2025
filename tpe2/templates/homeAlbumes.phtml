@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+<?php 
+  if ($user):
+    require_once './templates/formularioAgregarAlbum.phtml'; 
+  endif
+?>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Álbum</th>
+      <th scope="col">Año de Lanzamiento</th>
+    </tr>
+  </thead>
+  <tbody>
+
+    <?php  foreach($albumes as $album){
+        echo "<tr>";
+            echo "<td>$album->nombre</td>";
+            echo "<td>$album->anio_lanzamiento</td>";
+             if ($user):
+              echo "<td><a href='botonEditarAlbum/" . $album->id . "' class='btn btn-secondary'>Editar</a></td>";
+              echo "<td><a href='eliminarAlbum/" . $album->id . "' class='btn btn-danger' >Eliminar</a></td>";
+             endif;
+        echo "</tr>";
+     }   
+     
+    ?>
+
+  </tbody>
+</table>

@@ -1,0 +1,23 @@
+<h3>Canciones del Álbum seleccionado:</h3>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Álbum</th>
+            <th>Canción</th>
+            <th>Duración</th>
+            <th>Letra explícita</th>
+            <th>Año de Lanzamiento</th>
+        </tr>
+    </thead>
+    <tbody>
+        <?php foreach($cancion as $detalle): ?>
+            <tr>
+                <td><?= $detalle->nombre_album ?></td>
+                <td><?= $detalle->nombre_cancion ?></td>
+                <td><?= $detalle->duracion ?></td>
+                <td><?= $detalle->letra_explicita ? 'Si' : 'No' ?></td>
+                <td><?= $detalle->anio_lanzamiento ?></td>
+            </tr>
+        <?php endforeach; ?>
+    </tbody>
+</table>

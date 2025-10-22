@@ -1,0 +1,20 @@
+<table class="table">
+  <thead>
+    <tr>
+      <th>Álbum</th>
+      <th>Canción</th>
+      <th>Duración</th>
+      <th>Letra Explícita</th>
+    </tr>
+  </thead>
+  <tbody>
+    <?php
+    echo "<tr>";
+        echo "<td>" . $detalleCancionId->nombre_album . "</td>";
+        echo "<td>" . $detalleCancionId->nombre_cancion . "</td>";
+        echo "<td>" . $detalleCancionId->duracion . "</td>";
+        echo "<td>" . ($detalleCancionId->letra_explicita ? 'Si' : 'No')  . "</td>";
+    echo "</tr>";
+    ?>
+  </tbody>
+</table>
